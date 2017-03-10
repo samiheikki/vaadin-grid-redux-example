@@ -1,0 +1,40 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/vaadin-grid/vaadin-grid.html">
+<link rel="import" href="redux-store.html">
+
+<dom-module id="my-grid">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <vaadin-grid items="[[persons]]">
+
+      <vaadin-grid-column width="50px" flex-grow="0">
+        <template class="header">#</template>
+        <template>[[index]]</template>
+      </vaadin-grid-column>
+
+      <vaadin-grid-column>
+        <template class="header">Name</template>
+        <template>[[item]]</template>
+      </vaadin-grid-column>
+
+    </vaadin-grid>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'my-grid',
+      behaviors: [ReduxBehavior],
+      properties: {
+        persons: {
+          type: Array,
+          statePath: 'persons'
+        }
+      }
+    });
+  </script>
+</dom-module>

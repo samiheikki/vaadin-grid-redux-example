@@ -1,0 +1,32 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="redux-store.html">
+
+<dom-module id="add-person">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <button type="button" name="button" on-tap="addPerson">Add person</button>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'add-person',
+      behaviors: [ReduxBehavior],
+      addPerson: function() {
+        this.dispatch('add', Math.random().toString(36).substring(7));
+      },
+      actions: {
+        add: function(name) {
+          return {
+            type: 'ADD_PERSON',
+            person: name
+          }
+        }
+      }
+    });
+  </script>
+</dom-module>

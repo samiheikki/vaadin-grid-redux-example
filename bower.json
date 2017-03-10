@@ -1,0 +1,21 @@
+{
+  "name": "vaadin-grid-redux-example",
+  "homepage": "https://github.com/samiheikki/vaadin-grid-redux-example",
+  "authors": [
+    "Sami Suo-Heikki <samiheikki@vaadin.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vaadin-grid": "2.0-dev",
+    "polymer-redux": "tur-nr/polymer-redux#^0.4.0"
+  }
+}
